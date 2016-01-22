@@ -9,6 +9,11 @@ namespace Ui {
 class Filter2D;
 }
 
+enum class Kernels : short {Custom, Identity, GauissianBlur, BottomSobel, TopSobel,
+                            LeftSobel, RightSobel, Outline, Sharpen};
+
+const int KernelSize = 3;
+
 class Filter2D : public QDialog
 {
     Q_OBJECT
@@ -22,8 +27,11 @@ private slots:
     void on_btnSave_clicked();
     void on_tableWidget_itemChanged(QTableWidgetItem *item);
 
+    void on_comboBox_currentIndexChanged(int index);
+
 private:
     void updateImage();
+    void updateTable();
 
 private:
     Ui::Filter2D *ui;

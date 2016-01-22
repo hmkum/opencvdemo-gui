@@ -11,6 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = OpenCVDemo
 TEMPLATE = app
 
+QMAKE_CXX += -Wall -std=c++11
+
 LIBS += -lopencv_world
 
 SOURCES += src/main.cpp\
