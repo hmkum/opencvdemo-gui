@@ -26,8 +26,8 @@ public:
 private slots:
     void on_btnSave_clicked();
     void on_tableWidget_itemChanged(QTableWidgetItem *item);
-
     void on_comboBox_currentIndexChanged(int index);
+    void on_tbScale_textChanged(const QString &arg1);
 
 private:
     void updateImage();
@@ -37,6 +37,7 @@ private:
     Ui::Filter2D *ui;
 
     cv::Mat mImage, mResult, mKernel;
+    float mScale;
 };
 
 #endif // FILTER2D_H

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>166</width>
-    <height>247</height>
+    <height>287</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>9</x>
      <y>9</y>
      <width>151</width>
-     <height>231</height>
+     <height>271</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -188,6 +188,20 @@
         <string>0</string>
        </property>
       </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Scale:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="tbScale">
+      <property name="text">
+       <string>1.0</string>
+      </property>
      </widget>
     </item>
     <item>

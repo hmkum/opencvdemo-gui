@@ -21,6 +21,7 @@ Filter2D::Filter2D(QWidget *parent, cv::Mat image) :
     mKernel.create(3, 3, CV_32F);
     mKernel = 0.0;
     mKernel.at<float>(1,1) = 1.0;
+    mScale = 1.0f;
 
     updateImage();
 }
@@ -33,7 +34,7 @@ Filter2D::~Filter2D()
 void Filter2D::updateImage()
 {
 
-    cv::filter2D(mImage, mResult, mImage.depth(), mKernel);
+    cv::filter2D(mImage, mResult, mImage.depth(), mKernel * mScale);
     cv::imshow("Filter", mResult);
 }
 
@@ -170,4 +171,19 @@ void Filter2D::on_comboBox_currentIndexChanged(int index)
     default:
         break;
     }
+}
+
+void Filter2D::on_tbScale_textChanged(const QString &arg1)
+{
+    bool *ok = new bool;
+    mScale = arg1.toFloat(ok);
+    if(ok && *ok)
+    {
+        updateImage();
+    }
+    else
+    {
+        mScale = 1.0f;
+    }
+    delete ok;
 }
