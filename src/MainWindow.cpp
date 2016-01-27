@@ -307,5 +307,5 @@ void MainWindow::on_actionHistogram_triggered()
 void MainWindow::on_actionNoiseGenerator_triggered()
 {
     NoiseGenerator *ng = new NoiseGenerator(this, mModifiedImage);
-    ng->exec();
+    ng->show();
 }

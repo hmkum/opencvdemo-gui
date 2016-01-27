@@ -1,7 +1,7 @@
 #ifndef NOISEGENERATOR_H
 #define NOISEGENERATOR_H
 
-#include <QDialog>
+#include <QMainWindow>
 
 #include <opencv/cv.hpp>
 
@@ -9,7 +9,7 @@ namespace Ui {
 class NoiseGenerator;
 }
 
-class NoiseGenerator : public QDialog
+class NoiseGenerator : public QMainWindow
 {
     Q_OBJECT
 

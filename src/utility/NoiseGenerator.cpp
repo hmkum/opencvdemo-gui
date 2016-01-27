@@ -5,14 +5,14 @@
 #include <QDateTime>
 
 NoiseGenerator::NoiseGenerator(QWidget *parent) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::NoiseGenerator)
 {
     ui->setupUi(this);
 }
 
 NoiseGenerator::NoiseGenerator(QWidget *parent, const cv::Mat &image) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::NoiseGenerator),
     mImage(image)
 {
