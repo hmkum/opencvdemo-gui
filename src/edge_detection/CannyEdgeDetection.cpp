@@ -5,14 +5,14 @@
 #include <QMessageBox>
 
 CannyEdgeDetection::CannyEdgeDetection(QWidget *parent) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::CannyEdgeDetection)
 {
     ui->setupUi(this);
 }
 
 CannyEdgeDetection::CannyEdgeDetection(QWidget *parent, cv::Mat image) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::CannyEdgeDetection),
     mImage(image)
 {

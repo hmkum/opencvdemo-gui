@@ -1,14 +1,14 @@
 #ifndef LAPLACIANEDGEDETECTION_H
 #define LAPLACIANEDGEDETECTION_H
 
-#include <QDialog>
+#include <QMainWindow>
 #include <opencv/cv.hpp>
 
 namespace Ui {
 class LaplacianEdgeDetection;
 }
 
-class LaplacianEdgeDetection : public QDialog
+class LaplacianEdgeDetection : public QMainWindow
 {
     Q_OBJECT
 

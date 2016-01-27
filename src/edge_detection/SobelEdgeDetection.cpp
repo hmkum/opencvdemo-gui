@@ -4,14 +4,14 @@
 #include <QMessageBox>
 
 SobelEdgeDetection::SobelEdgeDetection(QWidget *parent) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::SobelEdgeDetection)
 {
     ui->setupUi(this);
 }
 
 SobelEdgeDetection::SobelEdgeDetection(QWidget *parent, cv::Mat image) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::SobelEdgeDetection),
     mImage(image)
 {

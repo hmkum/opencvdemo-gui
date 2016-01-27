@@ -5,14 +5,14 @@
 #include <QMessageBox>
 
 Filter2D::Filter2D(QWidget *parent) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::Filter2D)
 {
     ui->setupUi(this);
 }
 
 Filter2D::Filter2D(QWidget *parent, cv::Mat image) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::Filter2D),
     mImage(image)
 {

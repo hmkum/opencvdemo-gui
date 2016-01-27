@@ -1,14 +1,14 @@
 #ifndef CANNYEDGEDETECTION_H
 #define CANNYEDGEDETECTION_H
 
-#include <QDialog>
+#include <QMainWindow>
 #include <opencv/cv.hpp>
 
 namespace Ui {
 class CannyEdgeDetection;
 }
 
-class CannyEdgeDetection : public QDialog
+class CannyEdgeDetection : public QMainWindow
 {
     Q_OBJECT
 

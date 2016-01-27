@@ -5,14 +5,14 @@
 #include <QMessageBox>
 
 LaplacianEdgeDetection::LaplacianEdgeDetection(QWidget *parent) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::LaplacianEdgeDetection)
 {
     ui->setupUi(this);
 }
 
 LaplacianEdgeDetection::LaplacianEdgeDetection(QWidget *parent, cv::Mat image) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::LaplacianEdgeDetection),
     mImage(image)
 {

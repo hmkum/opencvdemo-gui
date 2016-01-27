@@ -209,25 +209,25 @@ void MainWindow::on_actionSplit_channels_triggered()
 void MainWindow::on_actionCanny_triggered()
 {
     CannyEdgeDetection *ced = new CannyEdgeDetection(this, mModifiedImage);
-    ced->exec();
+    ced->show();
 }
 
 void MainWindow::on_actionSobel_triggered()
 {
     SobelEdgeDetection *sed = new SobelEdgeDetection(this, mModifiedImage);
-    sed->exec();
+    sed->show();
 }
 
 void MainWindow::on_actionLaplacian_triggered()
 {
     LaplacianEdgeDetection *led = new LaplacianEdgeDetection(this, mModifiedImage);
-    led->exec();
+    led->show();
 }
 
 void MainWindow::on_actionFilter_triggered()
 {
     Filter2D *filter = new Filter2D(this, mModifiedImage);
-    filter->exec();
+    filter->show();
 }
 
 std::vector<cv::Mat> MainWindow::calculateHistogram() const

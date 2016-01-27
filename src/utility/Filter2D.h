@@ -1,7 +1,7 @@
 #ifndef FILTER2D_H
 #define FILTER2D_H
 
-#include <QDialog>
+#include <QMainWindow>
 #include <QTableWidgetItem>
 #include <opencv/cv.hpp>
 
@@ -14,7 +14,7 @@ enum class Kernels : short {Custom, Identity, GauissianBlur, BottomSobel, TopSob
 
 const int KernelSize = 3;
 
-class Filter2D : public QDialog
+class Filter2D : public QMainWindow
 {
     Q_OBJECT
 

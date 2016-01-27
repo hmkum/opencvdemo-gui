@@ -1,14 +1,14 @@
 #ifndef SOBELEDGEDETECTION_H
 #define SOBELEDGEDETECTION_H
 
-#include <QDialog>
+#include <QMainWindow>
 #include <opencv/cv.hpp>
 
 namespace Ui {
 class SobelEdgeDetection;
 }
 
-class SobelEdgeDetection : public QDialog
+class SobelEdgeDetection : public QMainWindow
 {
     Q_OBJECT
 
