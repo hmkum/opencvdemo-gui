@@ -42,6 +42,7 @@ private slots:
     void on_actionLaplacian_triggered();
     void on_actionFilter_triggered();
     void on_actionHistogram_triggered();
+    void on_actionNoiseGenerator_triggered();
 
 private:
     Ui::MainWindow *ui;

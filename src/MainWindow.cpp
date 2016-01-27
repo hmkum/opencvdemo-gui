@@ -4,6 +4,7 @@
 #include "edge_detection/SobelEdgeDetection.h"
 #include "edge_detection/LaplacianEdgeDetection.h"
 #include "utility/Filter2D.h"
+#include "utility/NoiseGenerator.h"
 
 #include <QFileDialog>
 #include <QMessageBox>
@@ -301,4 +302,10 @@ void MainWindow::on_actionHistogram_triggered()
     const std::vector<cv::Mat> hists = calculateHistogram();
     showHistogram(hists);
 
+}
+
+void MainWindow::on_actionNoiseGenerator_triggered()
+{
+    NoiseGenerator *ng = new NoiseGenerator(this, mModifiedImage);
+    ng->exec();
 }

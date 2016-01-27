@@ -89,6 +89,7 @@
     <addaction name="actionSplit_channels"/>
     <addaction name="actionFilter"/>
     <addaction name="actionHistogram"/>
+    <addaction name="actionNoiseGenerator"/>
    </widget>
    <widget class="QMenu" name="menuEdge_Detection">
     <property name="title">
@@ -174,7 +175,12 @@
   </action>
   <action name="actionHistogram">
    <property name="text">
-    <string>Histogram</string>
+    <string>&amp;Histogram</string>
+   </property>
+  </action>
+  <action name="actionNoiseGenerator">
+   <property name="text">
+    <string>Noise</string>
    </property>
   </action>
  </widget>
