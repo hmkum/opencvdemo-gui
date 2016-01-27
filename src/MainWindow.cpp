@@ -228,3 +228,77 @@ void MainWindow::on_actionFilter_triggered()
     Filter2D *filter = new Filter2D(this, mModifiedImage);
     filter->exec();
 }
+
+std::vector<cv::Mat> MainWindow::calculateHistogram() const
+{
+    const int bins = 256;
+    const int nc = mModifiedImage.channels();
+    std::vector<cv::Mat> histograms(nc);
+
+    for (size_t i = 0; i < histograms.size(); i++)
+            histograms[i] = cv::Mat::zeros(1, bins, CV_32SC1);
+
+    for(int i = 0; i < mModifiedImage.rows; ++i)
+    {
+        for(int j = 0; j < mModifiedImage.cols; ++j)
+        {
+            if(nc == 1)
+            {
+                uchar val = mModifiedImage.at<uchar>(i, j);
+                histograms[0].at<int>(val) += 1;
+            }
+            else
+            {
+                uchar b = mModifiedImage.at<cv::Vec3b>(i, j)[0];
+                uchar g = mModifiedImage.at<cv::Vec3b>(i, j)[1];
+                uchar r = mModifiedImage.at<cv::Vec3b>(i, j)[2];
+                histograms[0].at<int>(b) += 1;
+                histograms[1].at<int>(g) += 1;
+                histograms[2].at<int>(r) += 1;
+            }
+        }
+    }
+
+    return histograms;
+}
+
+void MainWindow::showHistogram(const std::vector<cv::Mat> &hists) const
+{
+    const int rows = 256; // Histogram height
+    const int bins = 256;
+    const int nc = mModifiedImage.channels();
+    const char *wnames[] = {"Blue", "Green", "Red"};
+    cv::Scalar colors[3] = {cv::Scalar(255, 0, 0), cv::Scalar(0, 255, 0), cv::Scalar(0, 0, 255)};
+
+    // Find max values
+    int maxPixel[3] = {0, 0, 0};
+    for (int i = 0; i < nc; ++i)
+    {
+        for (int j = 0; j < bins - 1; ++j)
+            maxPixel[i] = hists[i].at<int>(j) > maxPixel[i] ? hists[i].at<int>(j) : maxPixel[i];
+    }
+
+    std::vector<cv::Mat> images(nc);
+    for(int i = 0; i < nc; ++i)
+    {
+        images[i] = cv::Mat::zeros(rows, bins, CV_8UC3);
+
+        for(int j = 0; j < bins - 1; ++j)
+        {
+            cv::line(images[i],
+                     cv::Point(j, rows),
+                     cv::Point(j, rows - (hists[i].at<int>(j) * rows / maxPixel[i])), // Normalize hist values
+                     nc == 1 ? cv::Scalar(200, 200, 200) : colors[i],
+                     1);
+        }
+
+        cv::imshow(nc == 1 ? "Histogram" : wnames[i], images[i]);
+    }
+}
+
+void MainWindow::on_actionHistogram_triggered()
+{
+    const std::vector<cv::Mat> hists = calculateHistogram();
+    showHistogram(hists);
+
+}

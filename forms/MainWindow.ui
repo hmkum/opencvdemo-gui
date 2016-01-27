@@ -88,6 +88,7 @@
     </property>
     <addaction name="actionSplit_channels"/>
     <addaction name="actionFilter"/>
+    <addaction name="actionHistogram"/>
    </widget>
    <widget class="QMenu" name="menuEdge_Detection">
     <property name="title">
@@ -168,7 +169,12 @@
   </action>
   <action name="actionFilter">
    <property name="text">
-    <string>Filter</string>
+    <string>&amp;Filter</string>
+   </property>
+  </action>
+  <action name="actionHistogram">
+   <property name="text">
+    <string>Histogram</string>
    </property>
   </action>
  </widget>

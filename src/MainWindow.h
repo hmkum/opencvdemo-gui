@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <string>
+#include <vector>
 #include <QMainWindow>
 #include <opencv/cv.hpp>
 
@@ -19,6 +20,8 @@ public:
 
 private:
     void showModifiedImage();
+    std::vector<cv::Mat> calculateHistogram() const;
+    void showHistogram(const std::vector<cv::Mat> &hists) const;
 
 private slots:
     void on_pushButton_clicked();
@@ -38,6 +41,7 @@ private slots:
     void on_actionSobel_triggered();
     void on_actionLaplacian_triggered();
     void on_actionFilter_triggered();
+    void on_actionHistogram_triggered();
 
 private:
     Ui::MainWindow *ui;
