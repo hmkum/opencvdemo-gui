@@ -167,6 +167,15 @@ void Filter2D::on_comboBox_currentIndexChanged(int index)
 
         updateTable();
         updateImage();
+
+    case (int)Kernels::Median:
+        mKernel = 0.0;
+        mKernel.at<float>(1, 1) = 1.0;
+        updateTable();
+
+        cv::medianBlur(mImage, mResult, 3);
+        cv::imshow("Filter", mResult);
+
         break;
     default:
         break;

@@ -10,7 +10,7 @@ class Filter2D;
 }
 
 enum class Kernels : short {Custom, Identity, GauissianBlur, BottomSobel, TopSobel,
-                            LeftSobel, RightSobel, Outline, Sharpen};
+                            LeftSobel, RightSobel, Outline, Sharpen, Median};
 
 const int KernelSize = 3;
 

@@ -14,14 +14,6 @@
    <string>Filter</string>
   </property>
   <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>9</x>
-     <y>9</y>
-     <width>151</width>
-     <height>271</height>
-    </rect>
-   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QComboBox" name="comboBox">
@@ -68,6 +60,11 @@
       <item>
        <property name="text">
         <string>Sharpen</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Median</string>
        </property>
       </item>
      </widget>
